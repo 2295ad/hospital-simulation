@@ -25,6 +25,7 @@ Application can be run in the following ways :
 
 All test cases are added within `tests/spec.js` file.
 To fetch code coverage along with unit tests - `npm test:coverage`
+
  <img width="624" alt="Screenshot 2023-02-20 at 1 11 26 AM" src="https://user-images.githubusercontent.com/35234549/219971186-d2220063-ac82-4631-a6f7-5640521ca822.png">
 
 To run unit tests only - `npm test`
