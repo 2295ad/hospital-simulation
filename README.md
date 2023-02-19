@@ -22,7 +22,7 @@ Application can be run in the following ways :
                     npm start <patient state> <available drugs>
                     npm start D,D I
                    
-                   <img width="707" alt="Screenshot 2023-02-20 at 1 26 13 AM" src="https://user-images.githubusercontent.com/35234549/219971914-e0078e13-6a3c-4b7e-8718-da7ea75e266c.png">
+  <img width="707" alt="Screenshot 2023-02-20 at 1 26 13 AM" src="https://user-images.githubusercontent.com/35234549/219971914-e0078e13-6a3c-4b7e-8718-da7ea75e266c.png">
 
 
 ## Unit tests : 
