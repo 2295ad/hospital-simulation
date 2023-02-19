@@ -9,6 +9,7 @@ App which can simulate the future patients’state, based on their current state
 Node JS needs to be installed. Node JS version should be >= v16.0
 
 
+
 ## App execution methods
 
 Application can be run in the following ways :
