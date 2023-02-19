@@ -9,8 +9,8 @@ const {isLeapYear} = require('../utils');
  */
 class Medication {
 
-    constructor(availableDrugs){
-        this.drugList = this.mapAvailableDrugs(availableDrugs)
+    constructor(){
+        this.drugList = [];
     }
 
     /**
@@ -18,18 +18,17 @@ class Medication {
      * @returns list of drugs with full name
      */
     mapAvailableDrugs(availableDrugs){
-        let drugList = [];
-
-        if(!availableDrugs) return drugList;
-
-        const availableDrugsList = availableDrugs?.split(",");
         
+
+        if(!availableDrugs) return;
+        const availableDrugsList = availableDrugs?.split(",");
+
         Object.keys(DRUGS).map((medicine)=>{
             if(availableDrugsList?.includes(medicine)){
-                drugList.push(DRUGS[medicine]);
+                this.drugList.push(DRUGS[medicine]);
             }
         })
-        return drugList;
+        
     }
 
     /**

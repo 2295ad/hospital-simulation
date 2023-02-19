@@ -4,7 +4,11 @@ const Medication = require('./Medication');
 
 const {PATIENT_STATES,DRUGS} = require('./constants');
 
-
+/**
+ * @description RuleEngine determines the future state of patients health depending on
+ * available drugs. Please note - death rule has precedence above anything. 
+ * considered assumption - all available drugs will be used for treatment 
+ */
 class RuleEngine{
 
     /**
@@ -34,6 +38,7 @@ class RuleEngine{
                         const result = Medication.isMiraclePossible();
                         if(result){
                             result = 'H';
+                            break;
                         }
                     }
                     result = 'X';
@@ -41,7 +46,7 @@ class RuleEngine{
                 break;
             case 'Fever':
                 {
-                    if(availableDrugs.includes(DRUGS['P'])){
+                    if(availableDrugs.includes(DRUGS['P']) || availableDrugs.includes(DRUGS['As'])){
                         result = 'H'
                     }else{
                         result = 'F'
@@ -62,16 +67,18 @@ class RuleEngine{
                 {
                     if(availableDrugs.includes(DRUGS['I'])){
                         result = 'D';
+                    }else{
+                        result = 'X';
                     }
-                    result = 'X';
                 }
                 break;
             case 'Tuberculosis':
                 {
                     if(availableDrugs.includes(DRUGS['An'])){
                         result = 'H';
+                    }else{
+                        result = 'X';
                     }
-                    result = 'X';
                 }
                 break;
             default : break;

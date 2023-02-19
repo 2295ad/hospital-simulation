@@ -9,6 +9,8 @@ let PatientRecordBook = require('./src/PatientRecordBook');
 let Medication = require('./src/Medication');
 
 PatientRecordBook = new PatientRecordBook();
+Medication = new Medication();
+
 
 const commandLineInputParams = process.argv;
 
@@ -19,8 +21,9 @@ if(commandLineInputParams[2].endsWith('.txt')){
         }
 
         //split by new line
-        const inputList = data.split("/n");
-        inputList.map((ele)=>{
+        const inputList = data.split("\n");
+        inputList.shift();
+        inputList?.map((ele)=>{
 
             const data = ele.split(" ");
             const [patientStateStream,drugListStream] = data;
@@ -46,7 +49,7 @@ if(commandLineInputParams[2].endsWith('.txt')){
  */
 function modifyInputParams(patientStateStream,drugListStream){
     try{
-        Medication = new Medication(drugListStream);
+        Medication.mapAvailableDrugs(drugListStream);
         const availableDrugList = Medication.fetchAvailableDrugList();
         let patientStateList = patientStateStream?.split(",");
         
@@ -80,7 +83,6 @@ function predictFutureStates(patientStateList,availableDrugsList){
         const result = PatientRecordBook.fetchHealthRecord();
         printLog(result);
 
-        process.exit(1);
     }catch(err){
         console.error(`Error in predicting state - ${err}`)
     }
