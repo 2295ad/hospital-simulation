@@ -5,7 +5,7 @@ const {isLeapYear} = require('../utils');
 
 /**
  * @description - Class to map available drugs. If we need to add additional properties 
- * to drugs like expiry date, sideEffect etc can be extended
+ * to drugs like expiry date etc can be extended
  */
 class Medication {
 
