@@ -1,0 +1,30 @@
+{
+  "name": "hospitalsimulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://2295ad@github.com/2295ad/hospital-simulation.git"
+  },
+  "author": "Adarsh Nambiar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2295ad/hospital-simulation/issues"
+  },
+  "homepage": "https://github.com/2295ad/hospital-simulation#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1"
+  }
+}

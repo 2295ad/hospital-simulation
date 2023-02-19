@@ -1,6 +1,9 @@
 
-import {patientStates} from '../constants';
+const {PATIENT_STATES} = require('../constants'); 
 
+/**
+ * @description - A ledger to maintain record of patient health states at any point
+ */
 class PatientRecordBook {
 
     constructor(){
@@ -14,7 +17,7 @@ class PatientRecordBook {
     initialiseAllState(){
         let patientStateCount = new Map();
 
-        Object.keys(patientStates).map((ele)=>{
+        Object.keys(PATIENT_STATES).map((ele)=>{
             patientStateCount[ele] = 0;
         });
         return patientStateCount;
@@ -34,7 +37,13 @@ class PatientRecordBook {
    fetchHealthRecord(){
        return this.recordPatientState;
    }
+
+   /**
+    * @description - validate patient state
+    */
+   validatePatientState(state){
+    return PATIENT_STATES[state]?true:false;
+   }
+
 }
-
-
-export default PatientRecordBook;
+module.exports = PatientRecordBook;
